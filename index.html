@@ -6,6 +6,7 @@
   <title>EventShift — Reliability-Aware Residual Adaptation</title>
   <meta name="description" content="EventShift is a reliability-aware residual adaptation method for day–night RGB–event semantic segmentation.">
   <meta name="theme-color" content="#07111f">
+  <link rel="preload" as="image" href="assets/motivation-1600.webp" type="image/webp" imagesrcset="assets/motivation-960.webp 960w, assets/motivation-1600.webp 1600w, assets/motivation.webp 2400w" imagesizes="(max-width: 1220px) calc(100vw - 40px), 1180px" fetchpriority="high">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307111f'/%3E%3Cpath d='M14 18h27L24 32l17 14H14l17-14z' fill='%2345d6ff'/%3E%3Ccircle cx='46' cy='18' r='6' fill='%23ff4da6'/%3E%3C/svg%3E">
   <style>
     :root{--night:#07111f;--night2:#0b1b2e;--panel:#10243a;--text:#f3f7fb;--muted:#9fb0c2;--line:rgba(159,176,194,.18);--cyan:#45d6ff;--pink:#ff4da6;--lime:#b7f46b;--amber:#ffb64d;--paper:#eef4f8;--ink:#102133;--max:1180px;--shadow:0 24px 70px rgba(0,0,0,.28)}
@@ -64,7 +65,7 @@
         <article class="metric"><b>+1.34</b><span>DSEC11 mIoU under the matched schedule</span><small>78.36 → 79.70</small></article>
       </div>
       <figure class="hero-figure">
-        <img src="assets/motivation.png" width="2400" height="1080" alt="Day and night segmentation examples comparing RGB, published RGB-event models, EventShift, and ground truth">
+        <img src="assets/motivation-1600.webp" srcset="assets/motivation-960.webp 960w, assets/motivation-1600.webp 1600w, assets/motivation.webp 2400w" sizes="(max-width: 1220px) calc(100vw - 40px), 1180px" width="2400" height="1080" loading="eager" decoding="async" fetchpriority="high" alt="Day and night segmentation examples comparing RGB, published RGB-event models, EventShift, and ground truth">
         <figcaption><strong>The trust conflict.</strong> Events can recover nighttime structure, but unrestricted fusion may disturb reliable daytime semantics. EventShift aims for a stronger operating point across both regimes.</figcaption>
       </figure>
     </div>
@@ -79,7 +80,7 @@
           <div class="versus" aria-hidden="true">SHIFT</div>
           <article class="conflict-card night"><small>Low light</small><h3>Spend event evidence selectively.</h3><p>When RGB visibility falls, reliable event structure becomes valuable. The model should increase correction without giving the event stream an unrestricted semantic path.</p><div class="domain-value"><strong>+4.58</strong>night mIoU with EventShift</div></article>
         </div>
-        <figure class="figure"><img src="assets/domain-shift.png" width="2462" height="988" loading="lazy" alt="CIELAB lightness and chromaticity distributions for CoSEC day, CoSEC night, and DSEC11"><figcaption><strong>Photometric evidence for the shift.</strong> CoSEC night frames occupy a much darker region than CoSEC day; DSEC11 lies closer to the daytime lightness distribution.</figcaption></figure>
+        <figure class="figure"><img src="assets/domain-shift-1600.webp" srcset="assets/domain-shift-960.webp 960w, assets/domain-shift-1600.webp 1600w, assets/domain-shift.webp 2462w" sizes="(max-width: 1220px) calc(100vw - 68px), 1152px" width="2462" height="988" loading="lazy" decoding="async" alt="CIELAB lightness and chromaticity distributions for CoSEC day, CoSEC night, and DSEC11"><figcaption><strong>Photometric evidence for the shift.</strong> CoSEC night frames occupy a much darker region than CoSEC day; DSEC11 lies closer to the daytime lightness distribution.</figcaption></figure>
       </div>
     </section>
 
@@ -91,7 +92,7 @@
           <article class="control" data-number="2"><div class="control-icon" aria-hidden="true">⌖</div><h3>Where</h3><p>A learned allocator is biased by <strong>density, temporal balance, polarity balance, support, and multi-window edges</strong>.</p></article>
           <article class="control" data-number="3"><div class="control-icon" aria-hidden="true">±</div><h3>How much</h3><p><strong>RMS normalization and clipping</strong> explicitly cap each sample’s residual relative to the RGB feature scale.</p></article>
         </div>
-        <figure class="method-figure"><img src="assets/method.png" width="1800" height="760" loading="lazy" alt="EventShift architecture with an RGB semantic path, bidirectional event voxel and reliability-aware bounded residual adapter"><figcaption>RGB remains the semantic path. A 10-channel bidirectional event tensor and reliability prior guide only a bounded residual correction at res3 and res4.</figcaption></figure>
+        <figure class="method-figure"><img src="assets/method-1600.webp" srcset="assets/method-960.webp 960w, assets/method-1600.webp 1600w, assets/method.webp 1800w" sizes="(max-width: 1220px) calc(100vw - 76px), 1144px" width="1800" height="760" loading="lazy" decoding="async" alt="EventShift architecture with an RGB semantic path, bidirectional event voxel and reliability-aware bounded residual adapter"><figcaption>RGB remains the semantic path. A 10-channel bidirectional event tensor and reliability prior guide only a bounded residual correction at res3 and res4.</figcaption></figure>
       </div>
     </section>
 
@@ -104,7 +105,7 @@
             <h3 id="evidenceTitle">Conservative by day</h3><p id="evidenceText">RGB already carries a useful scene representation, so EventShift spends a smaller correction budget.</p>
             <div class="readouts" aria-live="polite"><div class="readout"><small>Low-light budget</small><strong id="budgetValue">0.56</strong></div><div class="readout"><small>Residual / RGB RMS</small><strong id="residualValue">4.1%</strong></div></div>
           </div>
-          <div class="evidence-image"><img src="assets/mechanism.png" width="2520" height="474" loading="lazy" alt="Measured day and night EventShift behavior showing RGB, events, reliability, allocation, residual, prediction and ground truth"></div>
+          <div class="evidence-image"><img src="assets/mechanism-1600.webp" srcset="assets/mechanism-960.webp 960w, assets/mechanism-1600.webp 1600w, assets/mechanism.webp 2194w" sizes="(max-width: 900px) calc(100vw - 70px), 710px" width="2194" height="477" loading="lazy" decoding="async" alt="Measured day and night EventShift behavior showing RGB, events, reliability, allocation, residual, prediction and ground truth"></div>
         </div>
       </div>
     </section>
@@ -135,8 +136,8 @@
       <div class="wrap">
         <div class="section-head"><div class="index">05 · Qualitative</div><div><h2>Inspect what the correction changes.</h2><p class="lead">The visual evidence focuses on the same matched mechanism: keep daytime semantics intact while recovering supported nighttime structure.</p></div></div>
         <div class="gallery">
-          <figure class="figure"><img src="assets/ablation.png" width="2827" height="672" loading="lazy" alt="Visual ablation comparing bounded residual, reliability support, and multi-window edge components on day and night crops"><figcaption><strong>Component switches.</strong> A matched visual analysis of the bounded-residual family on one day and one night region.</figcaption></figure>
-          <figure class="figure"><img src="assets/qualitative.png" width="2154" height="1166" loading="lazy" alt="CoSEC day and night context-and-detail comparisons between RGB-event baselines, EventShift, and ground truth"><figcaption><strong>Context and detail.</strong> Day crops emphasize traffic-light and rider semantics; night crops emphasize pedestrians and boundaries.</figcaption></figure>
+          <figure class="figure"><img src="assets/ablation-960.webp" srcset="assets/ablation-960.webp 960w, assets/ablation-1600.webp 1600w, assets/ablation.webp 2827w" sizes="(max-width: 900px) calc(100vw - 68px), 560px" width="2827" height="672" loading="lazy" decoding="async" alt="Visual ablation comparing bounded residual, reliability support, and multi-window edge components on day and night crops"><figcaption><strong>Component switches.</strong> A matched visual analysis of the bounded-residual family on one day and one night region.</figcaption></figure>
+          <figure class="figure"><img src="assets/qualitative-960.webp" srcset="assets/qualitative-960.webp 960w, assets/qualitative-1600.webp 1600w, assets/qualitative.webp 2154w" sizes="(max-width: 900px) calc(100vw - 68px), 560px" width="2154" height="1166" loading="lazy" decoding="async" alt="CoSEC day and night context-and-detail comparisons between RGB-event baselines, EventShift, and ground truth"><figcaption><strong>Context and detail.</strong> Day crops emphasize traffic-light and rider semantics; night crops emphasize pedestrians and boundaries.</figcaption></figure>
         </div>
       </div>
     </section>

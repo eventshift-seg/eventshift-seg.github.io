@@ -12,7 +12,7 @@ Shao-Kai Liu<sup>1</sup> · Yun-Tze Tsai<sup>1</sup> · Chia-Yu Lin<sup>2</sup> 
 
 </div>
 
-![EventShift qualitative overview](assets/motivation.png)
+![EventShift qualitative overview](assets/motivation.webp)
 
 ## Overview
 
@@ -48,14 +48,11 @@ See the [interactive project page](https://eventshift-seg.github.io/#results) fo
 ├── index.html              # Responsive, dependency-free project page
 ├── assets/
 │   ├── paper.pdf           # Final author version
-│   ├── motivation.png      # Day/night qualitative overview
-│   ├── method.png          # Architecture overview
-│   ├── mechanism.png       # Measured illumination behavior
-│   ├── domain-shift.png    # Photometric domain analysis
-│   ├── ablation.png        # Component visualization
-│   ├── qualitative.png     # Additional qualitative results
-│   └── tradeoff.png        # Trade-off analysis
+│   ├── *.webp              # Optimized images served by the project page
+│   ├── *.png               # Original-resolution source figures
+│   └── paper.pdf           # Final author version
 ├── CITATION.cff            # Machine-readable citation metadata
+├── LICENSE                 # MIT license for the project-page source code
 └── .nojekyll               # Serve static assets directly on GitHub Pages
 ```
 
@@ -86,8 +83,10 @@ If you use this work, please cite:
 
 GitHub also exposes the same metadata through [`CITATION.cff`](CITATION.cff).
 
-## Code and usage
+## Code availability
 
 The research implementation is not included in this repository yet. This repository currently contains the project page, paper, and paper figures only.
 
-No open-source license has been granted for these materials. Please contact the authors before redistributing or reusing the paper figures or site assets beyond normal scholarly linking and citation.
+## License
+
+The project-page source code is released under the [MIT License](LICENSE). The paper PDF and paper figures remain copyright of their respective authors and are not covered by the software license.
