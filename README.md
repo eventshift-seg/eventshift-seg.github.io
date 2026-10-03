@@ -8,7 +8,7 @@ Shao-Kai Liu<sup>1</sup> · Yun-Tze Tsai<sup>1</sup> · Chia-Yu Lin<sup>2</sup> 
 
 <sup>1</sup> National Yang Ming Chiao Tung University · <sup>2</sup> National Cheng Kung University
 
-[Project page](https://eventshift-seg.github.io/) · [Paper](https://eventshift-seg.github.io/assets/paper.pdf) · Code release pending
+[Project page](https://eventshift-seg.github.io/) · [Paper](https://eventshift-seg.github.io/assets/paper.pdf) · [Code](https://github.com/eventshift-seg/EventShift)
 
 </div>
 
@@ -83,9 +83,9 @@ If you use this work, please cite:
 
 GitHub also exposes the same metadata through [`CITATION.cff`](CITATION.cff).
 
-## Code availability
+## Code
 
-The research implementation is not included in this repository yet. This repository currently contains the project page, paper, and paper figures only.
+The research implementation is maintained separately in the official [`eventshift-seg/EventShift`](https://github.com/eventshift-seg/EventShift) repository. This repository contains only the project page, paper, and paper figures.
 
 ## License
 
