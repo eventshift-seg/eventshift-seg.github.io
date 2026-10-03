@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "EventShift project page"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Shao-Kai
+    affiliation: National Yang Ming Chiao Tung University
+  - family-names: Tsai
+    given-names: Yun-Tze
+    affiliation: National Yang Ming Chiao Tung University
+  - family-names: Lin
+    given-names: Chia-Yu
+    affiliation: National Cheng Kung University
+  - family-names: Lee
+    given-names: Chia-Ming
+    affiliation: National Yang Ming Chiao Tung University; National Cheng Kung University
+  - family-names: Hsu
+    given-names: Chih-Chung
+    affiliation: National Yang Ming Chiao Tung University; National Cheng Kung University
+repository-code: "https://github.com/eventshift-seg/eventshift-seg.github.io"
+url: "https://eventshift-seg.github.io/"
+preferred-citation:
+  type: conference-paper
+  title: "EventShift: Reliability-Aware Residual Adaptation for Day–Night RGB–Event Semantic Segmentation"
+  authors:
+    - family-names: Liu
+      given-names: Shao-Kai
+    - family-names: Tsai
+      given-names: Yun-Tze
+    - family-names: Lin
+      given-names: Chia-Yu
+    - family-names: Lee
+      given-names: Chia-Ming
+    - family-names: Hsu
+      given-names: Chih-Chung
+  collection-title: "ECCV Workshop on Event-Based and Multimodal Vision (EBMV)"
+  year: 2026

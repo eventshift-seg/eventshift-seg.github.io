@@ -1,18 +1,93 @@
-# EventShift Project Page
+<div align="center">
 
-Project page for **EventShift: Reliability-Aware Residual Adaptation for Day–Night RGB–Event Semantic Segmentation**.
+# EventShift
 
-Local preview:
+**Reliability-Aware Residual Adaptation for Day–Night RGB–Event Semantic Segmentation**
 
-    cd /ssd1/cactus8603/eventshift-project-page
-    python3 -m http.server 8080
+Shao-Kai Liu<sup>1</sup> · Yun-Tze Tsai<sup>1</sup> · Chia-Yu Lin<sup>2</sup> · Chia-Ming Lee<sup>1,2</sup> · Chih-Chung Hsu<sup>1,2</sup>
 
-Then open http://localhost:8080.
+<sup>1</sup> National Yang Ming Chiao Tung University · <sup>2</sup> National Cheng Kung University
 
-Content status:
+[Project page](https://eventshift-seg.github.io/) · [Paper](https://eventshift-seg.github.io/assets/paper.pdf) · Code release pending
 
-- The bundled paper is the final author version provided on 2026-10-03.
-- Authors and affiliations match the final manuscript.
-- The code exists locally at /ssd1/cactus8603/ebmv@eccv2026/segmentation/EventShift_0715, but no public code URL is claimed.
-- Results use the matched-backbone CoSEC ablation as primary evidence and keep the official challenge result clearly separated as context.
-- The page is static and intended for GitHub Pages at `eventshift-seg.github.io`.
+</div>
+
+![EventShift qualitative overview](assets/motivation.png)
+
+## Overview
+
+EventShift keeps RGB features as the semantic anchor and lets event evidence contribute only through a reliability-aware, bounded residual correction. The correction is controlled at three levels:
+
+- **When:** an illumination-conditioned budget opens more residual capacity as RGB visibility weakens.
+- **Where:** density, temporal balance, polarity balance, support, and multi-window edges guide spatial allocation.
+- **How much:** RMS normalization and clipping explicitly limit the correction relative to the RGB feature scale.
+
+The adapter adds **0.47M parameters**, equivalent to **0.22%** of the 215.93M-parameter model.
+
+## Key results
+
+The primary evidence is the matched-backbone CoSEC19 ablation using the same Swin-L Mask2Former backbone, split, and training recipe.
+
+| Method | Overall mIoU | Day mIoU | Night mIoU | Day–Night Avg. |
+| --- | ---: | ---: | ---: | ---: |
+| RGB continuation | 55.15 | 55.03 | 46.81 | 50.92 |
+| **EventShift** | **55.10** | **54.87** | **51.39** | **53.13** |
+| Change | −0.05 | −0.16 | **+4.58** | **+2.21** |
+
+Additional evidence:
+
+- **DSEC11:** 78.36 → **79.70 mIoU** and 95.33 → **95.73 pAcc** under the matched schedule.
+- **Official challenge:** the separate composite challenge system placed **2nd** in the Test Phase with **41.11 mIoU**. Because the aggregate includes the REAL subset, this result is presented as context rather than a direct comparison with the controlled CoSEC-only experiment.
+
+See the [interactive project page](https://eventshift-seg.github.io/#results) for the complete component table, visual comparisons, scope, and limitations.
+
+## Repository contents
+
+```text
+.
+├── index.html              # Responsive, dependency-free project page
+├── assets/
+│   ├── paper.pdf           # Final author version
+│   ├── motivation.png      # Day/night qualitative overview
+│   ├── method.png          # Architecture overview
+│   ├── mechanism.png       # Measured illumination behavior
+│   ├── domain-shift.png    # Photometric domain analysis
+│   ├── ablation.png        # Component visualization
+│   ├── qualitative.png     # Additional qualitative results
+│   └── tradeoff.png        # Trade-off analysis
+├── CITATION.cff            # Machine-readable citation metadata
+└── .nojekyll               # Serve static assets directly on GitHub Pages
+```
+
+## Local preview
+
+No build step or package installation is required.
+
+```bash
+git clone https://github.com/eventshift-seg/eventshift-seg.github.io.git
+cd eventshift-seg.github.io
+python3 -m http.server 8080
+```
+
+Open <http://localhost:8080>. Opening `index.html` directly also works, but a local server more closely matches GitHub Pages behavior.
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@inproceedings{liu2026eventshift,
+  title     = {EventShift: Reliability-Aware Residual Adaptation for Day--Night RGB--Event Semantic Segmentation},
+  author    = {Liu, Shao-Kai and Tsai, Yun-Tze and Lin, Chia-Yu and Lee, Chia-Ming and Hsu, Chih-Chung},
+  booktitle = {ECCV Workshop on Event-Based and Multimodal Vision (EBMV)},
+  year      = {2026}
+}
+```
+
+GitHub also exposes the same metadata through [`CITATION.cff`](CITATION.cff).
+
+## Code and usage
+
+The research implementation is not included in this repository yet. This repository currently contains the project page, paper, and paper figures only.
+
+No open-source license has been granted for these materials. Please contact the authors before redistributing or reusing the paper figures or site assets beyond normal scholarly linking and citation.
